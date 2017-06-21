@@ -14,8 +14,9 @@
 		CE257E261EF934AD004E9511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE257E251EF934AD004E9511 /* Assets.xcassets */; };
 		CE257E291EF934AD004E9511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE257E271EF934AD004E9511 /* LaunchScreen.storyboard */; };
 		CE257E311EF934DD004E9511 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257E301EF934DD004E9511 /* TodoManager.swift */; };
-		CE257E331EF9363B004E9511 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257E321EF9363B004E9511 /* Todo.swift */; };
 		CE257E351EF94319004E9511 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257E341EF94319004E9511 /* AddTodoViewController.swift */; };
+		CE38C49D1EF9A6ED005711B6 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38C49B1EF9A6ED005711B6 /* Todo+CoreDataClass.swift */; };
+		CE38C49E1EF9A6ED005711B6 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38C49C1EF9A6ED005711B6 /* Todo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		CE257E281EF934AD004E9511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE257E2A1EF934AD004E9511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE257E301EF934DD004E9511 /* TodoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoManager.swift; path = ../TodoManager.swift; sourceTree = "<group>"; };
-		CE257E321EF9363B004E9511 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Todo.swift; path = ../Todo.swift; sourceTree = "<group>"; };
 		CE257E341EF94319004E9511 /* AddTodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
+		CE38C49B1EF9A6ED005711B6 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE38C49C1EF9A6ED005711B6 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,8 @@
 		CE257E0F1EF934AD004E9511 = {
 			isa = PBXGroup;
 			children = (
+				CE38C49B1EF9A6ED005711B6 /* Todo+CoreDataClass.swift */,
+				CE38C49C1EF9A6ED005711B6 /* Todo+CoreDataProperties.swift */,
 				CE257E1A1EF934AD004E9511 /* ToDoApp */,
 				CE257E191EF934AD004E9511 /* Products */,
 			);
@@ -64,10 +68,9 @@
 			children = (
 				CE257E1B1EF934AD004E9511 /* AppDelegate.swift */,
 				CE257E1D1EF934AD004E9511 /* ViewController.swift */,
-				CE257E301EF934DD004E9511 /* TodoManager.swift */,
-				CE257E321EF9363B004E9511 /* Todo.swift */,
-				CE257E1F1EF934AD004E9511 /* Main.storyboard */,
 				CE257E341EF94319004E9511 /* AddTodoViewController.swift */,
+				CE257E301EF934DD004E9511 /* TodoManager.swift */,
+				CE257E1F1EF934AD004E9511 /* Main.storyboard */,
 				CE257E251EF934AD004E9511 /* Assets.xcassets */,
 				CE257E271EF934AD004E9511 /* LaunchScreen.storyboard */,
 				CE257E2A1EF934AD004E9511 /* Info.plist */,
@@ -152,9 +155,10 @@
 				CE257E1E1EF934AD004E9511 /* ViewController.swift in Sources */,
 				CE257E311EF934DD004E9511 /* TodoManager.swift in Sources */,
 				CE257E241EF934AD004E9511 /* ToDoApp.xcdatamodeld in Sources */,
+				CE38C49E1EF9A6ED005711B6 /* Todo+CoreDataProperties.swift in Sources */,
 				CE257E1C1EF934AD004E9511 /* AppDelegate.swift in Sources */,
 				CE257E351EF94319004E9511 /* AddTodoViewController.swift in Sources */,
-				CE257E331EF9363B004E9511 /* Todo.swift in Sources */,
+				CE38C49D1EF9A6ED005711B6 /* Todo+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +322,7 @@
 				CE257E2F1EF934AD004E9511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

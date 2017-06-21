@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoManager {
     // Singleton 
     static let sharedInstance = TodoManager()
     
-    var todos = [Todo]()
+    private var todos = [Todo]()
+    let context: NSManagedObjectContext!
     
     var count: Int {
         get {
@@ -24,23 +26,56 @@ class TodoManager {
         return todos[index]
     }
     
-    func addNewTodoWithName(name: String) {
-        let todo = Todo(name: name)
+    func addNewTodoWithName(name: String, date:NSDate) {
+        let todo = NSEntityDescription.insertNewObject(forEntityName: "Todo", into: context) as! Todo
+        
+        todo.name = name
+        todo.completed = false
+        todo.date = date
+        
         todos.append(todo)
         
-    }
-    
-    // MARK: INIT
-    
-    private init() {
-        todos.append(Todo(name: "Do Project"))
-        let t = Todo(name: "Have bacon rolls")
-        t.completed = true
-        todos.append(t)
-        todos.append(Todo(name: "Do PDA Stuff"))
-        todos.append(Todo(name: "Buy Beer"))
-        todos.append(Todo(name: "Get Chips"))
+        saveContext()
         
     }
+    
+    func removeTodoAtIndex(index: Int) {
+        context.delete(todoAtIndex(index: index))
+        todos.remove(at: index)
+        saveContext()
+    
+    }
+    
+    func saveContext() {
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Error saving context: \(error), \(error.userInfo)")
+        
+        }
+    }
+    
+    
+    func fetchTodos() {
+        let request : NSFetchRequest<Todo> = Todo.fetchRequest()
+        
+        do {
+            // try
+             let results = try context.fetch(Todo.fetchRequest())
+            todos = results as! [Todo]
+        } catch let error as NSError{
+            print("Could not fetch todos: \(error), \(error.userInfo)")
+            
+        }
+    }
+    
+     //BP: INIT
+    
+    private init() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.getContext()
+        self.fetchTodos()
+       
+        }
 }
 
